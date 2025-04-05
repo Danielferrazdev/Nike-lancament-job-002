@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ccee66; /* cor de fundo */
+    color: white; /* cor do texto */
+    padding: 20px 160px;
+    height: 100vh; /* altura */
+    font-family: "Noto Sans", sans-serif;
+    overflow: hidden; /* o que fazer com o que sobra ?*/
+}
+
+body::before { /* before(antes) */
+    content: '';
+    background: #202020;
+    position: absolute;
+    top: 0;
+    left: -600px;
+    transform: rotate(-70deg);
+    width: 100%;
+    height: 120%;
+}
+
+body::after {/* after(depois)*/ 
+    content: 'Nike';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 250px;
+    font-weight: bold;
+    /* grossura da fonte */
+    opacity: 0.5;
+}
+
+.logo {
+    width: 80px; /* largura */
+    position: relative;
+    z-index: 1;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.botao-carrinho {
+    background: #a3be52;
+    padding: 10px 20px;
+    border-radius: 20px; /* arredondar a borda */
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.botao-carrinho:hover {
+    opacity: 0.7; /* transparencia */
+}
+
+.imagem-tenis {
+    width: 800px;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: rotate(-25deg) scale(1);
+    }
+    50% {
+      transform: rotate(-25deg) scale(1.05);
+    }
+    100% {
+      transform: rotate(-25deg) scale(1);
+    }
+  }
+
+.caixa-principal {
+    display: flex; /* habilita alguns superpoderes */
+    justify-content: space-between; /* alinha na horizontal */
+    align-items: center; /* alinha na vertical */
+    height: 75%;
+    position: relative;
+    z-index: 1;
+}
+
+.caixa-texto {
+    max-width: 500px; /* largura maxima */
+}
+
+.caixa-botoes {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+.botoes {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* sombra genérica, será sobrescrita abaixo */
+}
+
+.botoes:hover {
+    transform: scale(1.1);
+}
+
+.botoes:active {
+    opacity: 0.6;
+}
+
+.verde {
+    background: #ccee66;
+    box-shadow: 0 0 12px #ccee66;
+}
+
+.rosa {
+    background: #ff9eb5;
+    box-shadow: 0 0 12px #ff9eb5;
+}
+
+.azul {
+    background: #58cced;
+    box-shadow: 0 0 12px #58cced;
+}
+
+.sombra-base { /* deixa uma base oval, por baixo do tênis*/
+    width: 300px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100px;
+    right: 120px;
+    z-index: 0;
+    filter: blur(8px);
+}
+
+.imagem-tenis { /* Deixa uma borda sambreada contornando o tênis */
+    width: 800px;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease-in-out;
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+}
